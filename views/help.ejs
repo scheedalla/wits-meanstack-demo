@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="notesApp"><html>
+  <% include partials/nav.ejs %>  
+  <body ng-controller="notesCtrl">
+  <% include partials/sidebar.ejs %>  
+    <div class="container-fluid" ng-init="getNotes()">
+      <div class="row">
+        <div class="col-md-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          
+          <h1 class="page-header">Help</h1>
+          
+          <div class="col-md-12">
+            Below are some common information needed to get started from the infrastructure side and the application side.
+          </div>
+          <br>
+
+          <h2> Infrastructure </h2>
+          <div class="col-md-12">
+
+            <!-- MongoDB -->
+            <div class="row">
+              <h4> MongoDB </h4>
+              <p>
+                Here are some common things that need to happen when creating a mongodb server.
+              </p>
+                <ul>
+                  <li>
+                    <p>
+                      Install MongoDB locally or on a linux/ubuntu/windows machine. (Note to make adjustments for v 2.6) 
+                      <a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-amazon/" target="_blank">Install MongoDB</a>
+                    </p>  
+                  </li>
+                  <li>
+                    <p>
+                      This is a guide to MongoDB shell commands. <a href="https://docs.mongodb.org/manual/reference/mongo-shell/" target="_blank"> Shell Commands</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Create a database: Once you have installed your MongoDB server and entered into the shell, you can create a new database with the following: 
+                      <br>Example: <b> use myDatabase</b> <br> This will create the database and save it as long as you add a document to it.
+                    </p>
+                    </li>
+                  <li>
+                    <p>
+                      Create a collection:  When in a database, to create a collection, you need to add a document by pointing to the desired name of the new collection and the collection will be created.  
+                      <br>
+                      Example: <b> db.myCollection.insert ({value: "my first document"}) </b>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Create a user:  You can create a user for any database when in the mongo shell.  There are many different rolse and settings that can be created, but here is the basic way to create a user for a specific database.  
+                      <br>
+                      Example: <b> use myDatabase
+                                  db.createUser(
+                                     {
+                                       user: "admin",
+                                       pwd: "mysecretpassword",
+                                       roles: [ ]
+                                     }
+                                  ) </b>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- NodeJS -->
+              <div class="row">
+                <h4> NodeJS </h4>
+                <p>
+                  We are using NodeJS v 10.25 because it is the most widely used stable version.  The latest v 12 is considered unstable or not supported enough.
+                </p>
+                  <ul>
+                    <li>
+                      <p>
+                        The NPM (Node Package Manager) site is a great source of different client side modules to help extend functionality.  For example we use the MongooseJS driver to connect Node to MongoDB.  You'll notice this in our models.
+                        <a href="https://www.npmjs.com/" target="_blank">NPM Registry</a>
+                      </p>  
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- ExpressJS -->
+                <div class="row">
+                <h4> ExpressJS </h4>
+                <p>
+                  We are using ExpressJS v 4.12.4
+                </p>
+                  <!-- <ul>
+                    <li>
+                      <p>
+                      </p>  
+                    </li>
+                  </ul> -->
+                </div>
+                <p><br></p>
+          </div>
+
+          <h2> Application </h2>
+          <div class="col-md-12">
+                <!-- AngularJS -->
+                <div class="row">
+                <h4> AngularJS </h4>
+                <p>
+                  We are using AngularJS v 1.4.7.  This is the most recent stable release and the closest to being ready to upgrade to AngularJS V 2.0
+                </p>
+                  <ul>
+                    <li>
+                      <p>
+                        Bower: We use lots of bower components for client side expansion.  It helps us integrate lots of libraries and frameworks.  Including Angular.  We use our bower.json file in the root of our project to manage dependencies and the versions of these dependencies.  <a href="http://bower.io/" target="_blank"> Bower </a>
+                      </p>  
+                    </li>
+                  </ul>
+                </div>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+
+   </body>
+   <% include partials/javascripts.ejs %>  
+</html>

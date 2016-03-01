@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="volunteersApp"><html>
+  <% include partials/nav.ejs %>
+  <body ng-controller="volunteersCtrl">
+  <% include partials/sidebar.ejs %>
+    <div class="container-fluid" ng-init="getVolunteers()">
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Volunteers</h1>
+          <pre>{{volunteers | json}}</pre>
+          <div class="col-sm-12">
+            The list of volunteer are below.
+          </div>
+          <br><br>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="volunteer in volunteers">
+                  <td>{{volunteer.name}}</td>
+                  <td>{{volunteer.phone}}</td>
+                  <td>{{volunteer.email}}</td>
+                  <td>{{volunteer.location}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </body>
+   <% include partials/javascripts.ejs %>
+</html>

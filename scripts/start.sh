@@ -1,0 +1,1 @@
+node /usr/local/bin/node /usr/local/meanstack/server.js &

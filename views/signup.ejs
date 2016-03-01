@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="volunteersApp"><html>
+  <% include partials/nav.ejs %>
+  <body ng-controller="volunteersCtrl">
+  <% include partials/sidebar.ejs %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+          <h1 class="page-header">Sign up as a Volunteer</h1>
+          <pre>{{newVolunteer | json}}</pre>
+          <div class="col-sm-12">
+            <div class="alert alert-success" role="alert" ng-show="messages.addVolunteer.success">{{messages.addVolunteer.success}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="messages.addVolunteer.error">{{messages.addVolunteer.error}}</div>
+            <form name="createForm" ng-submit="addVolunteer()" novalidate>
+
+              <div class="form-group">
+                <label>Name*</label>
+                <input type="text" class="form-control" ng-model="newVolunteer.name" name="title" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Phone*</label>
+                <input type="text" class="form-control" ng-model="newVolunteer.phone" name="title" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Email*</label>
+                <input type="email" class="form-control" ng-model="newVolunteer.email" name="title" required/>
+              </div>
+
+              <div class="form-group">
+                <label>Location*</label>
+                <div ng-repeat="place in locations">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="location" ng-model="newVolunteer.location" ng-value="place.name">
+                        {{place.name}}
+                      </label>
+                    </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Position*</label>
+                <div ng-repeat="job in positions">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="position" ng-model="newVolunteer.position" ng-value="job.name">
+                        {{job.name}}
+                      </label>
+                    </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" ng-disabled="createForm.$invalid">Sign Up!</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+   </body>
+   <% include partials/javascripts.ejs %>
+</html>
