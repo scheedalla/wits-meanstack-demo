@@ -5,7 +5,7 @@ var volunteers = require('./models/volunteers');
 
     module.exports = function(app) {
 
-        // Server routes.  Handles api calls, authentication etc
+// Server routes.  Handles api calls, authentication etc///////////////////////////////////////////
 
         // get all api call
         app.get('/api/volunteers', function(req, res) {
@@ -20,17 +20,7 @@ var volunteers = require('./models/volunteers');
             });
         });
 
-        // get single volunteer api call
-        app.get('/api/volunteers/:_id', function(req, res) {
-            // use mongoose to get all volunteers in the database
-            volunteers.findOne({
-                _id: req.params._id
-                }, function(err, volunteer) {
-                    if (err)
-                        res.send(err);
-                    res.json({ volunteer : volunteer }); // return all volunteers in JSON format
-            });
-        });
+      
 
         // route to handle creating (app.post)
         app.post('/api/addVolunteer', function(req, res) {
@@ -58,27 +48,22 @@ var volunteers = require('./models/volunteers');
             });
         });
 
-        // Frontend routes
 
-        // route to handle root request
+// Frontend routes to display view/////////////////////////////////////////////
+
+        // route to handle root view
         app.get('/', function(req, res) {
             // load our public/index.ejs file
             res.render('index');
         });
 
-        // route to handle volunteer request
-        app.get('/volunteer/:volunteerId', function(req, res) {
-            // load our public/volunteer.ejs file and pass the volunteer id
-            res.render('volunteer', { volunteerId: req.params.volunteerId });
-        });
-
-        // route to Signup request
+        // route to Signup view
         app.get('/signup', function(req, res) {
             // load our public/create.ejs file
             res.render('signup');
         });
 
-        // route to get help
+        // route to get help view
         app.get('/help', function(req, res) {
             // load our public/help.ejs file
             res.render('help');

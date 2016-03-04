@@ -1,0 +1,55 @@
+Part 1: Add phone number as a new field
+
+volunteers.js--
+phone:{type:String, default:'', required:false},
+
+index.ejs--
+<th>Phone Number</th>
+<td>{{volunteer.phone}}</td>
+
+
+Part 2: Add a new view that displays that volunteer's information
+First, add the view so we can access the browser:
+routes.js --
+// route to handle single volunteer view
+app.get('/volunteer/:volunteerId', function(req, res) {
+    // load our public/volunteer.ejs file and pass the volunteer id
+    res.render('single-volunteer',{
+      volunteerId:req.params.volunteerId
+    });
+});
+
+Second, write API to get the data to display on the page
+// get single volunteer api call
+app.get('/api/volunteers/:_id', function(req, res) {
+    // use mongoose to get all volunteers in the database
+    volunteers.findOne({
+        _id: req.params._id
+        }, function(err, volunteer) {
+            if (err)
+                res.send(err);
+            res.json({ volunteer : volunteer }); // return all volunteers in JSON format
+    });
+});
+
+Next, update the view to get the information from the API request to display on the page.
+<!DOCTYPE html>
+<html ng-app="volunteersApp"><html>
+  <% include partials/nav.ejs %>
+  <body ng-controller="volunteersCtrl">
+  <% include partials/sidebar.ejs %>
+    <div class="container-fluid" ng-init="singleVolunteer('<%= volunteerId%>')">
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Volunteers</h1>
+          <div class="col-sm-12">
+            Name: {{singleVolunteer.name}}<br>
+            Phone number: {{singleVolunteer.phone}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </body>
+   <% include partials/javascripts.ejs %>
+</html>

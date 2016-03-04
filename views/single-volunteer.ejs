@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="volunteersApp"><html>
+  <% include partials/nav.ejs %>
+  <body ng-controller="volunteersCtrl">
+  <% include partials/sidebar.ejs %>
+    <div class="container-fluid" ng-init="singleVolunteer('<%= volunteerId%>')">
+      <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Volunteers</h1>
+          <div class="col-sm-12">
+            Name: {{singleVolunteer.name}}<br>
+            Phone number: {{singleVolunteer.phone}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </body>
+   <% include partials/javascripts.ejs %>
+</html>

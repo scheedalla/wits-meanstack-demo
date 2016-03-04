@@ -17,15 +17,13 @@
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Phone Number</th>
                   <th>Email</th>
                   <th>Location</th>
                 </tr>
               </thead>
               <tbody>
                 <tr ng-repeat="volunteer in volunteers">
-                  <td>{{volunteer.name}}</td>
-                  <td>{{volunteer.phone}}</td>
+                  <td><a href="/volunteer/{{volunteer._id}}">{{volunteer.name}}</a></td>                  
                   <td>{{volunteer.email}}</td>
                   <td>{{volunteer.location}}</td>
                 </tr>
