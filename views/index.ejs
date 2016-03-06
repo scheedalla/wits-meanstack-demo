@@ -7,7 +7,6 @@
       <div class="row">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Volunteers</h1>
-          <pre>{{volunteers | json}}</pre>
           <div class="col-sm-12">
             The list of volunteer are below.
           </div>
@@ -19,13 +18,15 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>Location</th>
+                  <th>Position</th>
                 </tr>
               </thead>
               <tbody>
                 <tr ng-repeat="volunteer in volunteers">
-                  <td><a href="/volunteer/{{volunteer._id}}">{{volunteer.name}}</a></td>                  
+                  <td>{{volunteer.name}}</td>
                   <td>{{volunteer.email}}</td>
                   <td>{{volunteer.location}}</td>
+                  <td>{{volunteer.position}}</td>
                 </tr>
               </tbody>
             </table>

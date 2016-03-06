@@ -32,7 +32,10 @@ app.get('/api/volunteers/:_id', function(req, res) {
     });
 });
 
-Next, update the view to get the information from the API request to display on the page.
+Update index.ejs with the link to the new view
+<td><a href="/volunteer/{{volunteer._id}}">{{volunteer.name}}</a></td>
+
+Next, update the single view to get the information from the API request to display on the page.
 <!DOCTYPE html>
 <html ng-app="volunteersApp"><html>
   <% include partials/nav.ejs %>
