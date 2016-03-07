@@ -5,7 +5,7 @@ Project adapted from https://github.com/mcwalinski/meanstack
 # Component Versions
 
 ##To Run Locally##
-Install node: https://nodejs.org/download/. Download the stable version.
+Install node: https://nodejs.org/download/. Download the mature and dependable version.
 
 Checkout this project to your computer.
 

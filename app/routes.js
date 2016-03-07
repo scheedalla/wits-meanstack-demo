@@ -20,7 +20,7 @@ var volunteers = require('./models/volunteers');
             });
         });
 
-      
+
 
         // route to handle creating (app.post)
         app.post('/api/addVolunteer', function(req, res) {
@@ -64,9 +64,9 @@ var volunteers = require('./models/volunteers');
         });
 
         // route to get help view
-        app.get('/help', function(req, res) {
+        app.get('/resources', function(req, res) {
             // load our public/help.ejs file
-            res.render('help');
+            res.render('resources');
         });
 
         // catch 404 and forward to error handler

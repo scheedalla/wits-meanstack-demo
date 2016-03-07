@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="notesApp"><html>
+  <% include partials/nav.ejs %>
+  <body ng-controller="notesCtrl">
+  <% include partials/sidebar.ejs %>
+    <div class="container-fluid" ng-init="getNotes()">
+      <div class="row">
+        <div class="col-md-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+          <h1 class="page-header">Help</h1>
+
+          <div class="col-md-12">
+            Below are some common information needed to get started from the infrastructure side and the application side.
+          </div>
+          <br>
+
+          <h2> Database </h2>
+          <div class="col-md-12">
+
+            <!-- MongoDB -->
+            <div class="row">
+              <h4> MongoDB </h4>
+              <p>
+                Here are some things that will be helpful when creating a MongoDB server.
+              </p>
+                <ul>
+                  <li>
+                    <p>
+                      <a href="https://docs.mongodb.org/manual/installation/" target="_blank">Install MongoDB Locally</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="https://mlab.com/" target="_blank">  Setup a sandbox on MongoLabs</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>After setting up Mongo DB, you can use Command Line Interface tools or use a GUI to view the data. My favorite GUI is
+                      <a href="https://robomongo.org/" target="_blank">Robomongo</a>.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <h2>Server</h2>
+              <!-- NodeJS -->
+              <div class="row">
+                <h4> Node.js</h4>
+                  <ul>
+                    <li>
+                      <p>
+                        <a href="https://nodejs.org/en/download/" target="_blank">Download Node.js (prefer Mature and Dependable version)</a> *If you are on a PC, you will have to restart your computer after downloading.
+                      </p>
+                    </li>
+                    <li>
+                      <p>How to check if Node is running:
+                        Open command prompt (PC) or Terminal (Mac). Run the following command:
+                        <pre>node -v</pre>
+                        If you get a response that tells you the version number, you are all set!
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The <a href="https://www.npmjs.com/" target="_blank">NPM (Node Package Manager)</a> site is a great source of different client side modules to help extend functionality.  For example we use the MongooseJS driver to connect Node to MongoDB.  You'll notice this in our models.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- ExpressJS -->
+                <div class="row">
+                <h4> ExpressJS </h4>
+                <p>
+                  <a href="http://expressjs.com/" target="_blank">Express Documentation</a>
+                </p>
+                  <!-- <ul>
+                    <li>
+                      <p>
+                      </p>
+                    </li>
+                  </ul> -->
+                </div>
+                <p><br></p>
+          </div>
+
+          <h2> Client </h2>
+          <div class="col-md-12">
+                <!-- AngularJS -->
+                <div class="row">
+                <h4> AngularJS </h4>
+                <p>
+                  <a href="https://code.angularjs.org/1.4.5/docs/guide">AngularJS Documentation</a>: This app uses version 1.4.5.
+                </p>
+
+                </div>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+
+   </body>
+   <% include partials/javascripts.ejs %>
+</html>

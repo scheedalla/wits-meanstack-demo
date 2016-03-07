@@ -1,8 +1,8 @@
 {
-  "name": "MeanStack",
+  "name": "VolunteerManagementTool",
   "version": "0.0.1",
   "private": false,
-  "repository": "https://github.com/mcwalinski/meanstack",
+  "repository": "https://github.com/scheedalla/wits-meanstack-demo.git",
   "scripts": {
     "start": "node server.js"
   },
