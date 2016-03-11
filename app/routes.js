@@ -14,8 +14,7 @@ var volunteers = require('./models/volunteers');
             volunteers.find(function(err, volunteers) {
                 // if there is an error retrieving, send the error.
                 // nothing after res.send(err) will execute
-                if (err)
-                    res.send(err);
+                if (err)res.send(err);
                 res.json({ all : volunteers }); // return all Volunteers in JSON format
             });
         });
@@ -25,14 +24,14 @@ var volunteers = require('./models/volunteers');
         // route to handle creating (app.post)
         app.post('/api/addVolunteer', function(req, res) {
             var newVolunteer = new volunteers(req.body);      // create a new instance of the Volunteers model
-            console.log(req.body);
             newVolunteer.title = req.body.title;  // set the Volunteers info (comes from the request)
-            console.log(req.body.title);
             newVolunteer.save(function(err, volunteer) {
-                if (err)
-                res.send(err);
-            console.log(err);
-                res.json({ message: 'volunteer Added!' + volunteer });
+                if (err){
+                  res.send(err);
+                  console.log(err);
+                }
+
+                res.json({ volunteer: volunteer });
             });
         });
 
@@ -42,8 +41,7 @@ var volunteers = require('./models/volunteers');
         Volunteers.remove({
             _id: req.params._id,
           }, function(err, volunteer) {
-                if (err)
-                    res.send(err);
+                if (err)res.send(err);
                 res.json({ message: 'Successfully removed volunteer'});
             });
         });
