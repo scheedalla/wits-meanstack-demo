@@ -1,6 +1,8 @@
 # Volunteer Management Tool
 Demo for Women In Tech Conference
+
 Project adapted from https://github.com/mcwalinski/meanstack
+
 Author: Sruti Cheedalla
 
 # Component Versions
