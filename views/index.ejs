@@ -8,9 +8,11 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Volunteers</h1>
           <div class="col-sm-12">
-            The list of volunteer are below.
+            The list of volunteer are below.<br><br>
           </div>
-          <br><br>
+          <form class=" form-group input-group-lg">
+            <input ng-model="query" type="text" class="form-control" placeholder="Search..." autofocus>
+          </form>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -19,14 +21,16 @@
                   <th>Email</th>
                   <th>Location</th>
                   <th>Position</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="volunteer in volunteers">
+                <tr ng-repeat="volunteer in volunteers| filter:query">
                   <td><a href="{{volunteer._id}}">{{volunteer.name}}</a></td>
                   <td>{{volunteer.email}}</td>
                   <td>{{volunteer.location}}</td>
                   <td>{{volunteer.position}}</td>
+                  <td><button type="button" class="btn btn-danger" ng-click="removeVolunteer(volunteer._id)"><span class="glyphicon glyphicon-trash"></span></button></td>
                 </tr>
               </tbody>
             </table>

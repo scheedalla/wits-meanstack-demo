@@ -19,6 +19,4 @@ $ node server.js
 
 In your browser visit localhost:9000 the app will load up there.
 
-In {project root}/config/db.js you can point this project to your own MongoDB database.
-
-You can install your own MongoDB server locally and create a database or create one for free at https://mongolab.com/
+You can visit localhost:9000/resources or alternatively look at /views/resources.ejs for additional information on the MEAN stack

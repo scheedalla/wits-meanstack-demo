@@ -9,8 +9,7 @@ volunteers.controller('volunteersCtrl', function ($scope, $http) {
 	$scope.sortType     = 'volunteer.name'; // set the default sort type
 	$scope.sortReverse  = false;  // set the default sort order
 	$scope.search   	= '';     // set the default search/filter term
-  $scope.newVolunteer = {
-  }; // create object to contain new volunteer
+  $scope.newVolunteer = {}; // create object to contain new volunteer
   $scope.messages = {}; // create object to contain messages to the user
 
   $scope.locations = [

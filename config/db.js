@@ -7,5 +7,5 @@
         url : 'mongodb://hermione:ron@ds039135.mongolab.com:39135/volunteertool' // Uncomment to use
     } // Uncomment to use
 
-// User a service like MongoLabs to setup a free database in a sandbox to test with.
+// Use a service like MongoLabs to setup a free database in a sandbox to test with.
 // https://mongolab.com/

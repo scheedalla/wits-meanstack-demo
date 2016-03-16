@@ -3,7 +3,7 @@
 
     module.exports = function(app) {
 
-// Frontend routes to display view/////////////////////////////////////////////
+// Frontend routes to display views/////////////////////////////////////////////
 
         // route to handle root view
         app.get('/', function(req, res) {

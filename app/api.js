@@ -7,7 +7,7 @@ var volunteers = require('./models/volunteers');
 
 // Server routes.  Handles api calls, authentication etc///////////////////////////////////////////
 
-       // get all api call
+       // get all volunteers api call
        app.get('/api/volunteers', function(req, res) {
            // use mongoose to get all Volunteers in the database
            // console.log('get Volunteers');
@@ -21,7 +21,7 @@ var volunteers = require('./models/volunteers');
 
 
 
-       // route to handle creating (app.post)
+       // route to handle posting a new volunteer to the database (app.post)
        app.post('/api/addVolunteer', function(req, res) {
            var newVolunteer = new volunteers(req.body);      // create a new instance of the Volunteers model
            newVolunteer.title = req.body.title;  // set the Volunteers info (comes from the request)
@@ -35,7 +35,7 @@ var volunteers = require('./models/volunteers');
            });
        });
 
-       // route to handle delete goes here based on object _id (app.delete)
+       // delete a volunteer goes here based on object _id (app.delete)
        app.delete('/api/removeVolunteer/:_id', function(req, res) {
 
        volunteers.remove({
