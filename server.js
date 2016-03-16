@@ -51,7 +51,7 @@ var port = process.env.PORT || 9000;
 app.listen(port);
 
 // console log to start app
-console.log('Application is running on port ' + port);
+console.log('Application is running on http://localhost:' + port);
 
 // expose app
 exports = module.exports = app;
