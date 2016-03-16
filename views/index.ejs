@@ -23,7 +23,7 @@
               </thead>
               <tbody>
                 <tr ng-repeat="volunteer in volunteers">
-                  <td>{{volunteer.name}}</td>
+                  <td><a href="{{volunteer._id}}">{{volunteer.name}}</a></td>
                   <td>{{volunteer.email}}</td>
                   <td>{{volunteer.location}}</td>
                   <td>{{volunteer.position}}</td>

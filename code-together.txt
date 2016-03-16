@@ -2,30 +2,30 @@ Part 1: Add phone number as a new field
 --------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
 
-//volunteers.js
+//app/models/volunteers.js
 phone:{type:String, default:'', required:false},
 
 //--------------------------------------------------------------------------------------------------------------
-
-//index.ejs
-<th>Phone Number</th>
-<td>{{volunteer.phone}}</td>
-
-//--------------------------------------------------------------------------------------------------------------
-
-//signup.ejs
+//views/signup.ejs
 <div class="form-group">
   <label>Phone*</label>
   <input type="text" class="form-control" ng-model="newVolunteer.phone" name="title" required/>
 </div>
 //--------------------------------------------------------------------------------------------------------------
 
+//views/index.ejs
+<th>Phone Number</th>
+<td>{{volunteer.phone}}</td>
+
+//--------------------------------------------------------------------------------------------------------------
+
+
 Part 2: Add a new view that displays that volunteer's information
 --------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
 
 //First, add the view so we can access it in the browser
-//routes.js
+//app/routes.js
 // route to handle single volunteer view
 app.get('/volunteer/:volunteerId', function(req, res) {
     // load our public/volunteer.ejs file and pass the volunteer id
@@ -39,8 +39,8 @@ app.get('/volunteer/:volunteerId', function(req, res) {
 //Second, write API to get the data to display on the page
 // get single volunteer api call
 app.get('/api/volunteers/:_id', function(req, res) {
-    // use mongoose to get all volunteers in the database
-    volunteers.findOne({
+    // use mongoose to get volunteer in the database
+    Volunteers.findOne({
         _id: req.params._id
         }, function(err, volunteer) {
             if (err)
