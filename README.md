@@ -1,6 +1,8 @@
 # Volunteer Management Tool
 Demo for Women In Tech Conference
 
+https://github.com/scheedalla/wits-meanstack-demo
+
 Project adapted from https://github.com/mcwalinski/meanstack
 
 Author: Sruti Cheedalla

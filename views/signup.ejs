@@ -8,7 +8,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
           <h1 class="page-header">Sign up as a Volunteer</h1>
-          <pre>{{newVolunteer | json}}</pre>
+          <pre>$scope.newVolunteer = <br>{{newVolunteer | json}}</pre>
           <div class="col-sm-12">
             <div class="alert alert-success" role="alert" ng-show="messages.addVolunteer.success">{{messages.addVolunteer.success}}</div>
             <div class="alert alert-danger" role="alert" ng-show="messages.addVolunteer.error">{{messages.addVolunteer.error}}</div>
@@ -17,7 +17,7 @@
               <div class="form-group">
                 <label>Name*</label>
                 <input type="text" class="form-control" ng-model="newVolunteer.name" name="title" required/>
-              </div>              
+              </div>
 
               <div class="form-group">
                 <label>Email*</label>
