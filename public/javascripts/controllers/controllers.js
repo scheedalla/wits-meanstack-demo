@@ -43,9 +43,8 @@ $scope.getVolunteers = function() {
 
 // Single Volunteer
 $scope.singleVolunteer = function(value) {
-    $scope.id = value;
     config ={};
-    $http.get("/api/volunteers/" + $scope.id, config, {}).
+    $http.get("/api/volunteers/" + value, config, {}).
       success(function(data) {
       $scope.singleVolunteer = data.volunteer;
       // window.console.log($scope.volunteer);

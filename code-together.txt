@@ -29,7 +29,7 @@ Part 2: Add a new view that displays that volunteer's information
 // get single volunteer api call
 app.get('/api/volunteers/:_id', function(req, res) {
     // use mongoose to get volunteer in the database
-    Volunteers.findOne({
+    volunteers.findOne({
         _id: req.params._id
         }, function(err, volunteer) {
             if (err)
