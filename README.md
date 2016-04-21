@@ -34,6 +34,8 @@ $ node server.js
 
 <b>STEP 5</b>
 
-In your browser visit localhost:9000 the app will load up there.
+In your browser visit http://localhost:9000 the app will load up there.
 
-You can visit localhost:9000/resources or alternatively look at /views/resources.ejs for additional information on the MEAN stack
+You can visit http://localhost:9000/resources or alternatively look at /views/resources.ejs for additional information on the MEAN stack
+
+Also look at the file <a href="#">CODETOGETHER.md</a>
