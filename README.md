@@ -38,4 +38,4 @@ In your browser visit http://localhost:9000 the app will load up there.
 
 You can visit http://localhost:9000/resources or alternatively look at /views/resources.ejs for additional information on the MEAN stack
 
-Also look at the file <a href="CODETOGETHER.md">CODETOGETHER.md</a>
+Also look at the file <a href="CODETOGETHER.md">CODETOGETHER.md</a> for a tutorial.
