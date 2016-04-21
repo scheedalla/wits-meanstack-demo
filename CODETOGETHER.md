@@ -18,13 +18,11 @@ Modify the HTML views.
 Open the file /views/signup.ejs and add a form element to include the Phone Number as a field
 
 <pre>
-<div class="form-group">
-  <label>Phone*</label>
-  <input type="text" class="form-control" ng-model="newVolunteer.phone" name="title" required/>
-</div>
+&#60;div class="form-group">
+  &#60;label>Phone*</label>
+  &#60;input type="text" class="form-control" ng-model="newVolunteer.phone" name="title" required/>
+&#60;/div>
 </pre>
 
 And open the file /views/index.ejs to add the Phone Number as a column to the table. 
-
-<b>STEP 3</b>
 
